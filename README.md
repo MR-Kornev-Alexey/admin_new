@@ -1,9 +1,7 @@
-Dashboard (Vue)
+Admin dashboards (Vue)
 
-install
-
-npm i
-
-use
+npm install
 
 npm run dev
+
+
