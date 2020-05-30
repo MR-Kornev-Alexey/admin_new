@@ -4,7 +4,6 @@
     <v-table
       :users_data="USERS"
     />
-    <pre>Жду предложений и замечаний</pre>
   </div>
 </template>
 

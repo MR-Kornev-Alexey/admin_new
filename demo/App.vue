@@ -9,12 +9,16 @@
           <h1> Klever-Link  Dashboard </h1>
           <div class="main-panel__user">
             <div>Manager</div>
-            <div><img src="demo/assets/img/avatar.jpg" alt="avatar"></div>
+            <div>
+              <img
+                src="demo/assets/img/avatar.jpg"
+                alt="avatar"
+              >
+            </div>
           </div>
-
         </div>
 
-        <hr style="margin: 50px 0px; border: 1px solid #e3e3e3;">
+        <hr style="margin: 10px 0px; border: 1px solid #e3e3e3;">
         <router-view />
       </div>
       <sidebar-menu
@@ -91,7 +95,7 @@ export default {
           title: 'Статистика',
           hiddenOnCollapse: true
         },
-       {
+        {
           component: separator
         },
         {
@@ -117,7 +121,7 @@ export default {
             text: 'В работе',
             class: 'vsm--badge_default'
           }
-        },
+        }
       ],
       collapsed: false,
       themes: [
@@ -133,10 +137,9 @@ export default {
   mounted () {
     this.onResize()
     window.addEventListener('resize', this.onResize)
-
   },
   methods: {
-   onToggleCollapse (collapsed) {
+    onToggleCollapse (collapsed) {
       console.log(collapsed)
       this.collapsed = collapsed
     },
