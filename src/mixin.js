@@ -1,5 +1,6 @@
 import pathToRegexp from 'path-to-regexp'
 
+
 export const itemMixin = {
   data () {
     return {

@@ -55,7 +55,7 @@ export default {
           icon: 'fas fa-fw fa-tachometer-alt'
         },
         {
-          href: '/page',
+          href: '/base',
           title: 'База',
           icon: 'fa fa-list-ul',
           child: [
@@ -133,9 +133,10 @@ export default {
   mounted () {
     this.onResize()
     window.addEventListener('resize', this.onResize)
+
   },
   methods: {
-    onToggleCollapse (collapsed) {
+   onToggleCollapse (collapsed) {
       console.log(collapsed)
       this.collapsed = collapsed
     },
