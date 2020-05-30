@@ -16,17 +16,17 @@
   width: 100%;
   text-align: left;
   transition: 0.3s max-width ease;
-  
+
   .vsm--scroll-wrapper {
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
   }
-  
+
   .vsm--dropdown > .vsm--list {
     padding: 5px;
   }
-  
+
   .vsm--item {
     position: relative;
     display: block;
@@ -203,5 +203,4 @@
   }
 }
 
-@import './themes/default-theme';
 @import './themes/white-theme';

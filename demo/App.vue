@@ -5,29 +5,16 @@
   >
     <div class="demo">
       <div class="container">
-        <h1>
-          vue-sidebar-menu
-          <a
-            style="color: #000;text-transform: uppercase;font-size: 14px;font-weight: 400;"
-            href="https://github.com/yaminncco/vue-sidebar-menu"
-          >
-            Github
-          </a>
-        </h1>
-        <p>A vue.js sidebar menu component</p>
-        <div>
-          Select theme:
-          <select v-model="selectedTheme">
-            <option
-              v-for="(theme, index) in themes"
-              :key="index"
-              :value="theme.input"
-            >
-              {{ theme.name }}
-            </option>
-          </select>
+        <div class="main-panel">
+          <h1> Klever-Link  Dashboard </h1>
+          <div class="main-panel__user">
+            <div>Manager</div>
+            <div><img src="demo/assets/img/avatar.jpg" alt="avatar"></div>
+          </div>
+
         </div>
-        <hr style="margin: 50px 0px;border: 1px solid #e3e3e3;">
+
+        <hr style="margin: 50px 0px; border: 1px solid #e3e3e3;">
         <router-view />
       </div>
       <sidebar-menu
@@ -49,7 +36,7 @@
 
 <script>
 const separator = {
-  template: `<hr style="border-color: rgba(0, 0, 0, 0.1); margin: 20px;">`
+  template: `<hr style="border-color: rgba(0, 0, 0, 0.4); margin: 20px;">`
 }
 
 export default {
@@ -59,41 +46,62 @@ export default {
       menu: [
         {
           header: true,
-          title: 'Getting Started',
+          title: 'Klever Link',
           hiddenOnCollapse: true
         },
         {
           href: '/',
-          title: 'Installation',
-          icon: 'fa fa-download'
+          title: 'Панель управления',
+          icon: 'fas fa-fw fa-tachometer-alt'
         },
         {
-          href: '/basic-usage',
-          title: 'Basic Usage',
-          icon: 'fa fa-code'
+          href: '/page',
+          title: 'База',
+          icon: 'fa fa-list-ul',
+          child: [
+            {
+              href: '/base',
+              title: 'База линков',
+              icon: 'fa fa-file-alt'
+            },
+            {
+              href: '/sorting',
+              title: 'Сортировка',
+              icon: 'fa fa-file-alt'
+            },
+            {
+              href: '/delete',
+              title: 'Удаление',
+              icon: 'fa fa-file-alt'
+            }
+          ]
+        },
+        {
+          href: '/users',
+          title: 'Пользователи',
+          icon: 'fas fa-users'
+        },
+        {
+          href: '/top100',
+          title: 'TOP100',
+          icon: 'fas fa-american-sign-language-interpreting'
         },
         {
           header: true,
-          title: 'Usage',
+          title: 'Статистика',
           hiddenOnCollapse: true
         },
-        {
-          href: '/props',
-          title: 'Props',
-          icon: 'fa fa-cogs'
-        },
-        {
-          href: '/events',
-          title: 'Events',
-          icon: 'fa fa-bell'
-        },
-        {
-          href: '/styling',
-          title: 'Styling',
-          icon: 'fa fa-palette'
-        },
-        {
+       {
           component: separator
+        },
+        {
+          href: '/chart',
+          title: 'Графики',
+          icon: 'far fa-chart-bar',
+          badge: {
+            text: 'В работе',
+            class: 'vsm--badge_default'
+          }
         },
         {
           header: true,
@@ -102,81 +110,17 @@ export default {
         },
         {
           href: '/disabled',
-          title: 'Disabled page',
+          title: 'Временно',
           icon: 'fa fa-lock',
-          disabled: true
-        },
-        {
-          title: 'Badge',
-          icon: 'fa fa-cog',
+          disabled: true,
           badge: {
-            text: 'new',
+            text: 'В работе',
             class: 'vsm--badge_default'
           }
         },
-        {
-          href: '/page',
-          title: 'Dropdown Page',
-          icon: 'fa fa-list-ul',
-          child: [
-            {
-              href: '/page/sub-page-1',
-              title: 'Sub Page 01',
-              icon: 'fa fa-file-alt'
-            },
-            {
-              href: '/page/sub-page-2',
-              title: 'Sub Page 02',
-              icon: 'fa fa-file-alt'
-            }
-          ]
-        },
-        {
-          title: 'Multiple Level',
-          icon: 'fa fa-list-alt',
-          child: [
-            {
-              title: 'page'
-            },
-            {
-              title: 'Level 2 ',
-              child: [
-                {
-                  title: 'page'
-                },
-                {
-                  title: 'Page'
-                }
-              ]
-            },
-            {
-              title: 'Page'
-            },
-            {
-              title: 'Another Level 2',
-              child: [
-                {
-                  title: 'Level 3',
-                  child: [
-                    {
-                      title: 'Page'
-                    },
-                    {
-                      title: 'Page'
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
       ],
       collapsed: false,
       themes: [
-        {
-          name: 'Default theme',
-          input: ''
-        },
         {
           name: 'White theme',
           input: 'white-theme'
@@ -216,6 +160,8 @@ export default {
 <style lang="scss">
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 body,
 html {
   margin: 0;
@@ -223,10 +169,10 @@ html {
 }
 
 body {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 18px;
   background-color: #f2f4f7;
-  color: #262626;
+  color: #565656;
 }
 
 #demo {
@@ -252,12 +198,12 @@ body {
 }
 
 .demo {
-  padding: 50px;
+  padding: 10px 50px 50px;
 }
 
 .container {
   max-width: 900px;
-}
+ }
 
 pre {
   font-family: Consolas, monospace;
@@ -267,5 +213,19 @@ pre {
   padding: 15px;
   line-height: 1.5;
   overflow: auto;
+}
+.main-panel{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  &__user {
+    display: flex;
+    align-items: center;
+    div img {
+      width: 60px;
+      height: 60px;
+      margin: 0 10px 0  20px;
+    }
+  }
 }
 </style>
