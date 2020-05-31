@@ -10,10 +10,7 @@
           <div class="main-panel__user">
             <div>Manager</div>
             <div>
-              <img
-                src="demo/assets/img/avatar.jpg"
-                alt="avatar"
-              >
+              <img src="demo/assets/img/avatar.jpg"  alt="avatar" >
             </div>
           </div>
         </div>
