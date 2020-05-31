@@ -1,15 +1,15 @@
 <template>
-    <div class="v-chart">
-      <h2>Статистика</h2>
-      <p>Страница на реконструкции</p>
-      <pre>Жду предложений и замечаний</pre>
-    </div>
+  <div class="v-chart">
+    <h2>Статистика</h2>
+    <p>Страница на реконструкции</p>
+    <pre>Жду предложений и замечаний</pre>
+  </div>
 </template>
 
 <script>
-  export default {
-    name: 'v-chart'
-  }
+export default {
+  name: 'VChart'
+}
 </script>
 
 <style lang="scss">

@@ -10,6 +10,7 @@ import vDelete from './components/main-menu/v-delete'
 import vUsers from './components/main-menu/v-users'
 import vTop100 from './components/main-menu/v-top100'
 import vChart from './components/main-menu/v-chart'
+import inputUser from './components/input/input-user'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -54,6 +55,11 @@ const router = new VueRouter({
       path: '/chart',
       name: 'v-chart',
       component: vChart
+    },
+    {
+      path: '/input-user',
+      name: 'input-user',
+      component: inputUser
     }
   ]
 })

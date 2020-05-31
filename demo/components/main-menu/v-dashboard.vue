@@ -6,9 +6,9 @@
   </div>
 </template>
 <script>
-  export default {
-    name: 'v-dashboard'
-  }
+export default {
+  name: 'VDashboard'
+}
 </script>
 
 <style lang="scss">

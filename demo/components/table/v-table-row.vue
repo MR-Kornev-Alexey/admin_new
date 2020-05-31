@@ -1,32 +1,32 @@
 <template>
   <div class="v-table-row">
     <div class="row row__name">
-      {{row_data.name}}
+      {{ rowData.name }}
     </div>
     <div class="row row__family">
-      {{row_data.family}}
+      {{ rowData.family }}
     </div>
     <div class="row row__company">
-      {{row_data.company}}
+      {{ rowData.company }}
     </div>
     <div class="row row__date">
-      {{row_data.time_create}}
+      {{ rowData.time_create }}
     </div>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'v-table-row',
-    props: {
-      row_data: {
-        type: Object,
-        default: () => {
-          return {}
-        }
+export default {
+  name: 'VTableRow',
+  props: {
+    rowData: {
+      type: Object,
+      default: () => {
+        return {}
       }
     }
   }
+}
 </script>
 
 <style lang="scss">
@@ -40,4 +40,3 @@
     justify-content: space-around;
   }
 </style>
-

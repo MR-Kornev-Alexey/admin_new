@@ -28,16 +28,15 @@ export default {
       return this.USERS.slice(from, to)
     }
   },
+  mounted () {
+    this.GET_USERS_FROM_API()
+  },
   methods: {
     ...mapActions([
-      'GET_USERS_FROM_API',
-      'CREATE_USER_TO_API'
+      'GET_USERS_FROM_API'
     ])
-  },
-  mounted () {
-    this.CREATE_USER_TO_API()
-    this.GET_USERS_FROM_API()
   }
+
 }
 </script>
 

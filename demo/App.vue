@@ -10,12 +10,15 @@
           <div class="main-panel__user">
             <div>Manager</div>
             <div>
-              <img src="demo/assets/img/avatar.jpg"  alt="avatar" >
+              <img
+                src="demo/assets/img/avatar.jpg"
+                alt="avatar"
+              >
             </div>
           </div>
         </div>
 
-        <hr style="margin: 10px 0px; border: 1px solid #e3e3e3;">
+        <hr style="margin: 10px 0; border: 1px solid #e3e3e3;">
         <router-view />
       </div>
       <sidebar-menu
@@ -56,6 +59,11 @@ export default {
           icon: 'fas fa-fw fa-tachometer-alt'
         },
         {
+          href: '/input-link',
+          title: 'Ввод линка',
+          icon: 'fas fa-download'
+        },
+        {
           href: '/base',
           title: 'База',
           icon: 'fa fa-list-ul',
@@ -80,7 +88,13 @@ export default {
         {
           href: '/users',
           title: 'Пользователи',
-          icon: 'fas fa-users'
+          icon: 'fas fa-users',
+          child: [
+            {
+              href: '/input-user',
+              title: 'Ввод пользователя',
+              icon: 'fa fa-download'
+            }]
         },
         {
           href: '/top100',
@@ -142,8 +156,8 @@ export default {
     },
     onItemClick (event, item) {
       console.log('onItemClick')
-      // console.log(event)
-      // console.log(item)
+      console.log(event)
+      console.log(item)
     },
     onResize () {
       if (window.innerWidth <= 767) {

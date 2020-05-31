@@ -1,6 +1,5 @@
 import pathToRegexp from 'path-to-regexp'
 
-
 export const itemMixin = {
   data () {
     return {
@@ -14,9 +13,9 @@ export const itemMixin = {
     if (this.item.header || this.item.component) return
     this.initState()
   },
-  mounted() {
+  mounted () {
     if (!this.$router) {
-        window.addEventListener('hashchange', this.initState)
+      window.addEventListener('hashchange', this.initState)
     }
   },
   destroyed () {

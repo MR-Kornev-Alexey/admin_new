@@ -1,28 +1,34 @@
 <template>
-  <div class="v-table"
-       :users_data="users_data">
-     <div class="v-table__header">
-      <p @click="sortByName"> Name <i class="fas fa-sort"></i></p>
-      <p>Family <i class="fas fa-sort"></i></p>
-      <p>Company <i class="fas fa-sort"></i> </p>
-      <p @click="sortByDate">Registration date <i class="fas fa-sort"></i> </p>
+  <div
+    class="v-table"
+    :users_data="usersData"
+  >
+    <div class="v-table__header">
+      <p @click="sortByName">
+        Name <i class="fas fa-sort" />
+      </p>
+      <p>Family <i class="fas fa-sort" /></p>
+      <p>Company <i class="fas fa-sort" /> </p>
+      <p @click="sortByDate">
+        Registration date <i class="fas fa-sort" />
+      </p>
     </div>
     <div class="v-table__body">
       <v-table-row
         v-for="row in paginationUsers"
         :key="row.id"
-        v-bind:row_data="row"
+        :row-data="row"
       />
     </div>
     <div class="v-table__pagination">
-      <div class="page"
-           v-for="page in pages"
+      <div
+        v-for="page in pages"
+        :key="page"
 
-           :key="page"
-           @click="pageClick(page)"
-
-      >{{page}}
-
+        class="page"
+        @click="pageClick(page)"
+      >
+        {{ page }}
       </div>
     </div>
   </div>
@@ -38,7 +44,7 @@ export default {
     vTableRow
   },
   props: {
-    users_data: {
+    usersData: {
       type: Array,
       default: () => {
         return []
